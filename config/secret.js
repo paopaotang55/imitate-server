@@ -1,1 +1,1 @@
-module.exports = "trello"
+module.exports = "trello";
