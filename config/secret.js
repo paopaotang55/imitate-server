@@ -1,1 +1,3 @@
-module.exports = "trello";
+module.exports = {
+  secret: "trello"
+};

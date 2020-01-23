@@ -1,38 +1,92 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const controller = require('./controller/index');
+const controller = require("./controller/index");
 
 //유저 로그인 회원가입 회원탈퇴
-router.post('/register', controller.users.register);
+router.post("/register", controller.users.register);
 
-router.post('/login', controller.users.login);
+router.post("/login", controller.users.login);
 
-router.put('/editPassword', controller.users.checkToken, controller.users.editPassword)
+router.put(
+  "/editPassword",
+  controller.users.checkToken,
+  controller.users.editPassword
+);
 
-router.delete('/deleteUser', controller.users.checkToken, controller.users.deleteUser)
+router.put(
+  "/editUsername",
+  controller.users.checkToken,
+  controller.users.editUsername
+);
 
-//board 전체가져오기 추가 수정 삭제  
-router.get('/getBoards', controller.users.checkToken, controller.boards.getBoards)
+router.delete(
+  "/deleteUser",
+  controller.users.checkToken,
+  controller.users.deleteUser
+);
 
-router.post('/addBoard', controller.users.checkToken, controller.boards.addBoard)
+//board 전체가져오기 추가 수정 삭제
+router.get(
+  "/getBoards",
+  controller.users.checkToken,
+  controller.boards.getBoards
+);
 
-router.put('/editBoard', controller.users.checkToken, controller.boards.editBoard)
+router.post(
+  "/addBoard",
+  controller.users.checkToken,
+  controller.boards.addBoard
+);
 
-router.delete('/deleteBoard', controller.users.checkToken, controller.boards.deleteBoard)
+router.put(
+  "/editBoard",
+  controller.users.checkToken,
+  controller.boards.editBoard
+);
 
-//container 와 card 전체가져오기 추가 수정 삭제  
-router.get('/getContainers', controller.users.checkToken, controller.boards.getContainers)
+router.delete(
+  "/deleteBoard",
+  controller.users.checkToken,
+  controller.boards.deleteBoard
+);
 
-router.post('/addContainer', controller.users.checkToken, controller.boards.addContainer)
+//container 와 card 전체가져오기 추가 수정 삭제
+router.get(
+  "/getContainers",
+  controller.users.checkToken,
+  controller.boards.getContainers
+);
 
-router.post('/addCard', controller.users.checkToken, controller.boards.addCard)
+router.post(
+  "/addContainer",
+  controller.users.checkToken,
+  controller.boards.addContainer
+);
 
-router.delete('/deleteCard', controller.users.checkToken, controller.boards.deleteCard)
+router.post("/addCard", controller.users.checkToken, controller.boards.addCard);
 
-router.delete('/deleteContainer', controller.users.checkToken, controller.boards.deleteContainer)
+router.delete(
+  "/deleteCard",
+  controller.users.checkToken,
+  controller.boards.deleteCard
+);
 
-router.put('/editContainer', controller.users.checkToken, controller.boards.editContainer)
+router.delete(
+  "/deleteContainer",
+  controller.users.checkToken,
+  controller.boards.deleteContainer
+);
 
-router.put('/editCard', controller.users.checkToken, controller.boards.editCard)
+router.put(
+  "/editContainer",
+  controller.users.checkToken,
+  controller.boards.editContainer
+);
+
+router.put(
+  "/editCard",
+  controller.users.checkToken,
+  controller.boards.editCard
+);
 
 module.exports = router;
